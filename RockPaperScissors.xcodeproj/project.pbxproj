@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D35C6A881E4F478600BB4228 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = D35C6A871E4F478600BB4228 /* click.wav */; };
+		D35C6A8C1E4F560700BB4228 /* battlesound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D35C6A8B1E4F560700BB4228 /* battlesound.mp3 */; };
+		D35C6A8E1E4F6AF100BB4228 /* victory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D35C6A8D1E4F6AF100BB4228 /* victory.mp3 */; };
+		D36512FF1E4A5EF70028465E /* Pokemon GB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D36512FE1E4A5EF70028465E /* Pokemon GB.ttf */; };
 		D366058C1E4A02EC004BC099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366058B1E4A02EC004BC099 /* AppDelegate.swift */; };
 		D366058E1E4A02EC004BC099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366058D1E4A02EC004BC099 /* ViewController.swift */; };
 		D36605911E4A02EC004BC099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D366058F1E4A02EC004BC099 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D35C6A871E4F478600BB4228 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		D35C6A8B1E4F560700BB4228 /* battlesound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = battlesound.mp3; sourceTree = "<group>"; };
+		D35C6A8D1E4F6AF100BB4228 /* victory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = victory.mp3; sourceTree = "<group>"; };
+		D36512FE1E4A5EF70028465E /* Pokemon GB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon GB.ttf"; sourceTree = "<group>"; };
 		D36605881E4A02EC004BC099 /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D366058B1E4A02EC004BC099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D366058D1E4A02EC004BC099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +62,10 @@
 		D366058A1E4A02EC004BC099 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				D36512FE1E4A5EF70028465E /* Pokemon GB.ttf */,
+				D35C6A8B1E4F560700BB4228 /* battlesound.mp3 */,
+				D35C6A871E4F478600BB4228 /* click.wav */,
+				D35C6A8D1E4F6AF100BB4228 /* victory.mp3 */,
 				D366058B1E4A02EC004BC099 /* AppDelegate.swift */,
 				D366058D1E4A02EC004BC099 /* ViewController.swift */,
 				D366058F1E4A02EC004BC099 /* Main.storyboard */,
@@ -124,7 +136,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36512FF1E4A5EF70028465E /* Pokemon GB.ttf in Resources */,
+				D35C6A8C1E4F560700BB4228 /* battlesound.mp3 in Resources */,
 				D36605961E4A02EC004BC099 /* LaunchScreen.storyboard in Resources */,
+				D35C6A8E1E4F6AF100BB4228 /* victory.mp3 in Resources */,
+				D35C6A881E4F478600BB4228 /* click.wav in Resources */,
 				D36605931E4A02EC004BC099 /* Assets.xcassets in Resources */,
 				D36605911E4A02EC004BC099 /* Main.storyboard in Resources */,
 			);
@@ -302,6 +318,7 @@
 				D366059C1E4A02EC004BC099 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
