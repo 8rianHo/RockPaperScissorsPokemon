@@ -10,58 +10,6 @@ import UIKit
 
 class View: UIView {
     
-    //Pokemon background
-    var longBarText: UIButton!
-    var longBarLbl: UILabel!
-    var myHPbar: UIView!
-    var opponentHPbar: UIView!
-    var firstMessageBtn: UIButton!
-    var secondMessageBtn: UIButton!
-    
-    var myHPprogress: UIProgressView!
-    var myOppProgress: UIProgressView!
-    
-    // move images
-    var myMoveImage: UIImageView!
-    var oppMoveImage: UIImageView!
-    var myImage: UIImageView!
-    var oakImage: UIImageView!
-    
-    // medium bar
-    var menuBar: UIImageView!
-    var fightBtn: UIButton!
-    var itemBtn: UIButton!
-    var pkmnBtn: UIButton!
-    var runItem: UIButton!
-    var arrowBtn: UIImageView!
-    
-    // item bar
-    var itemList: UIImageView!
-    var itemCancelBtn: UIButton!
-    var PotionBtn: UIButton!
-    var PotionCount: UILabel!
-    
-    
-    // fight bar
-    var fightBar: UIImageView!
-    var arrow2Btn: UIImageView!
-    var rockBtn: UIButton!
-    var paperBtn: UIButton!
-    var scissorsBtn: UIButton!
-    var fightStack: UIStackView!
-    
-    var myScoreLbl: UILabel!
-    var originalScoreLbl: UILabel!
-    
-    // MARK: testing
-    var playerName: UILabel!
-    var passed_name:String = ""
-    var passed_playerHP:Double = 0.0
-    var passed_oakHP:Double = 0.0
-    var passed_oakItems:Int = 0
-    var passed_playerItems:Int = 0
-    var oak_itemCount: UILabel!
-    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -81,19 +29,13 @@ class View: UIView {
     func messageLbl(longBarLbl:UILabel) -> Int {
         var num = 0
         if longBarLbl.text == "Got away safely!" {
-            //dismiss(animated: true, completion: nil)
             num = 1
         } else if (longBarLbl.text?.contains("KNOCKED"))! || (longBarLbl.text?.contains("DEFEATED"))! || (longBarLbl.text?.contains("DRAW!"))! {
-            //sound.play_click()
             longBarLbl.text = "TAP TO BATTLE AGAIN"
         } else if (longBarLbl.text?.contains("TAP TO BATTLE AGAIN"))!{
-            //sound.play_click()
-            //dismiss(animated: true, completion: nil)
             num = 2
         } else {
-            //sound.play_click()
             longBarLbl.text? = ""
-            //menuBarVisible(hidden: false)
             num = 3
         }
         return num
@@ -238,28 +180,19 @@ class View: UIView {
         switch check{
         case 1:
             longBarText.isEnabled = true
-//            sound.song.stop()
-//            sound.loss.play()
             name.score = 0
-            //menuBarVisible(hidden: true)
             longBarLbl.text? = "OAK WINS! \(name.name) WAS KNOCKED OUT!"
             num = 1
             break
         case 2:
             longBarText.isEnabled = true
-//            sound.song.stop()
-//            sound.victory.play()
             name.score = 0
-            //menuBarVisible(hidden: true)
             longBarLbl.text? = "\(name.name) WINS! PROFESSOR OAK was DEFEATED!"
             num = 2
             break
         case 3:
             longBarText.isEnabled = true
-//            sound.song.stop()
-//            sound.victory.play()
             name.score = 0
-            //menuBarVisible(hidden: true)
             longBarLbl.text? = "DRAW!"
             num = 3
             break
@@ -272,9 +205,6 @@ class View: UIView {
     func reset(longBarLbl:UILabel, btn:UIButton, pMoveImage:UIImageView, oMoveImage:UIImageView, pImage:UIImageView, oImage:UIImageView){
         
         longBarLbl.text? = ""
-        //        message1 = ""
-        //        message2 = ""
-        //MARK: MIGHT BE NEEDED^^ BELOW IS A RESET
         btn.isEnabled = false
         pMoveImage.image = nil
         oMoveImage.image = nil
@@ -295,6 +225,23 @@ class View: UIView {
         cancel.isHidden = toggle
         potion.isHidden = toggle
         lbl.isHidden = toggle
+    }
+
+    func setUpLabels(name:UILabel, score:UILabel, original:UILabel, who:Player, longBar:UILabel){
+        name.text? = who.name
+        score.text = "\(who.score)"
+        original.text = "\(who.score)"
+        
+        longBar.text = "PROFESSOR OAK wants to fight!"
+    }
+    func setupScreen(pMoveImage:UIImageView, oMoveImage:UIImageView, myHP:UIProgressView, oHP:UIProgressView, player:Player, oak:Player){
+        pMoveImage.image = nil
+        oMoveImage.image = nil
+        
+        myHP.transform = myHP.transform.scaledBy(x: 1, y: 4)
+        myHP.setProgress(Float(player.playerHP), animated: true)
+        oHP.transform = oHP.transform.scaledBy(x: 1, y: 4)
+        oHP.setProgress(Float(oak.playerHP), animated: true)
     }
 
 }

@@ -19,7 +19,6 @@ class RandomGenerator {
         set{
             let rangeOut = Int(arc4random_uniform(UInt32(newValue)))
             _output = rangeOut
-            print(output)
         }
     }
     

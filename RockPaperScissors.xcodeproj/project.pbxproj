@@ -26,9 +26,7 @@
 		D3C4E7871EF155AC00F5B9EE /* loss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3C4E7851EF155AC00F5B9EE /* loss.mp3 */; };
 		D3C4E7881EF155AC00F5B9EE /* menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3C4E7861EF155AC00F5B9EE /* menu.mp3 */; };
 		D3C4E78A1EF1D68B00F5B9EE /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4E7891EF1D68B00F5B9EE /* Battle.swift */; };
-		D3C4E78C1EF1DDAA00F5B9EE /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4E78B1EF1DDAA00F5B9EE /* UserInterface.swift */; };
 		D3C4E7921EF293DD00F5B9EE /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4E7911EF293DD00F5B9EE /* View.swift */; };
-		D3C4E7941EF2954600F5B9EE /* GameSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4E7931EF2954600F5B9EE /* GameSetupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +51,7 @@
 		D3C4E7851EF155AC00F5B9EE /* loss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loss.mp3; sourceTree = "<group>"; };
 		D3C4E7861EF155AC00F5B9EE /* menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menu.mp3; sourceTree = "<group>"; };
 		D3C4E7891EF1D68B00F5B9EE /* Battle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
-		D3C4E78B1EF1DDAA00F5B9EE /* UserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
 		D3C4E7911EF293DD00F5B9EE /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		D3C4E7931EF2954600F5B9EE /* GameSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSetupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +84,11 @@
 		D366058A1E4A02EC004BC099 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
-				D3C4E7781EEEB39D00F5B9EE /* Model */,
 				D3C4E7751EEEAF9B00F5B9EE /* Resources */,
-				D3C4E7911EF293DD00F5B9EE /* View.swift */,
-				D3C4E7931EF2954600F5B9EE /* GameSetupView.swift */,
+				D3C4E7781EEEB39D00F5B9EE /* Model */,
+				D3C4E7951EF48B1200F5B9EE /* View */,
+				D3C4E7961EF48B2400F5B9EE /* Controller */,
 				D366058B1E4A02EC004BC099 /* AppDelegate.swift */,
-				D3C173161EC3156F00FB42C1 /* GameSetupViewController.swift */,
-				D366058D1E4A02EC004BC099 /* ViewController.swift */,
 				D366058F1E4A02EC004BC099 /* Main.storyboard */,
 				D36605921E4A02EC004BC099 /* Assets.xcassets */,
 				D36605941E4A02EC004BC099 /* LaunchScreen.storyboard */,
@@ -126,9 +120,25 @@
 				D3C4E7761EEEB38200F5B9EE /* Item.swift */,
 				D3C4E7791EEF32A300F5B9EE /* Player.swift */,
 				D3C4E7891EF1D68B00F5B9EE /* Battle.swift */,
-				D3C4E78B1EF1DDAA00F5B9EE /* UserInterface.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D3C4E7951EF48B1200F5B9EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3C4E7911EF293DD00F5B9EE /* View.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D3C4E7961EF48B2400F5B9EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3C173161EC3156F00FB42C1 /* GameSetupViewController.swift */,
+				D366058D1E4A02EC004BC099 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +173,7 @@
 				TargetAttributes = {
 					D36605871E4A02EC004BC099 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = BSGKZ553K3;
+						DevelopmentTeam = JY8L23JU7Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -216,12 +226,10 @@
 				D32740711EC673C800D075EF /* SoundSetUp.swift in Sources */,
 				D3C4E7921EF293DD00F5B9EE /* View.swift in Sources */,
 				D32740731EC673E100D075EF /* RandomGenerators.swift in Sources */,
-				D3C4E7941EF2954600F5B9EE /* GameSetupView.swift in Sources */,
 				D3C4E78A1EF1D68B00F5B9EE /* Battle.swift in Sources */,
 				D3C173171EC3156F00FB42C1 /* GameSetupViewController.swift in Sources */,
 				D3C4E77A1EEF32A300F5B9EE /* Player.swift in Sources */,
 				D3C4E7771EEEB38200F5B9EE /* Item.swift in Sources */,
-				D3C4E78C1EF1DDAA00F5B9EE /* UserInterface.swift in Sources */,
 				D366058C1E4A02EC004BC099 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,11 +353,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BSGKZ553K3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JY8L23JU7Z;
 				INFOPLIST_FILE = RockPaperScissors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Brian-Ho.RockPaperScissors";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myapp.RockPaperScissorsPokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -359,11 +369,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BSGKZ553K3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JY8L23JU7Z;
 				INFOPLIST_FILE = RockPaperScissors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Brian-Ho.RockPaperScissors";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myapp.RockPaperScissorsPokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

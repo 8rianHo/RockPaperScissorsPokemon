@@ -18,8 +18,6 @@ class GameSetupViewController: UIViewController {
     
     var chosen_playerHP:Int = 5
     var chosen_oakHP:Int = 5
-    var items_player = Item()
-    var items_oak = Item()
     var player_test = Player()
     var oak_test = Player()
     
@@ -29,7 +27,6 @@ class GameSetupViewController: UIViewController {
         super.viewDidLoad()
         
         sound.sound_setup()
-        // TODO: label should have value of initial HPs here
         HPlabel_player.text? = chosen_playerHP.description
         HPlabel_oak.text? = chosen_oakHP.description
         
@@ -39,7 +36,6 @@ class GameSetupViewController: UIViewController {
         sound.play_menu()
     }
     
-    // TODO: increment or decrement HP - player button
     @IBAction func increment_playerHP(_ sender: Any) {
         let hp = chosen_playerHP
         
@@ -58,8 +54,6 @@ class GameSetupViewController: UIViewController {
         }
     }
     
-        
-    // TODO: increment or decrement HP - oak button
     @IBAction func increment_oakHP(_ sender: Any) {
         let hp = chosen_oakHP
         
@@ -76,12 +70,6 @@ class GameSetupViewController: UIViewController {
             HPlabel_oak.text? = chosen_oakHP.description
         }
     }
-
-    // TODO: button to start game should pass the initial HP values chosen by the player to the next view controller.
-
-    @IBAction func start_game(_ sender: Any) {
-
-    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let valid_name = player_name.text
@@ -89,7 +77,6 @@ class GameSetupViewController: UIViewController {
         if (valid_name?.isEmpty)! || (valid_name?.contains(" "))! || (oak_test?.contains("OAK"))! || ((valid_name?.characters.count)! > 6) {
             player_name.text = ""
             player_name.placeholder = "valid name please"
-            // change to arrow
             return false
         }
         sound.play_click()
