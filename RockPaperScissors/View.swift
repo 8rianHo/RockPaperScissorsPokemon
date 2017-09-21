@@ -10,14 +10,6 @@ import UIKit
 
 class View: UIView {
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
     // fight bar setup
     func fightBar(fightBar:UIImageView, fightBtn:UIButton, arrow2Btn:UIImageView, fightStack:UIStackView, hidden:Bool){
         fightBar.isHidden = hidden
@@ -41,11 +33,10 @@ class View: UIView {
         return num
     }
 
-    func menuBarSet(menuBar:UIImageView, fightBtn:UIButton, itemBtn:UIButton, pkmnBtn:UIButton, runBtn:UIButton, arrow2Btn:UIImageView, hidden:Bool){
+    func menuBarSet(menuBar:UIImageView, fightBtn:UIButton, itemBtn:UIButton, runBtn:UIButton, arrow2Btn:UIImageView, hidden:Bool){
         menuBar.isHidden = hidden
         fightBtn.isHidden = hidden
         itemBtn.isHidden = hidden
-        pkmnBtn.isHidden = hidden
         runBtn.isHidden = hidden
         arrow2Btn.isHidden = hidden
     }
@@ -58,7 +49,7 @@ class View: UIView {
     func setBattleImage1(pMoveImage:UIImageView, oMoveImage:UIImageView, pImage:UIImageView, oImage:UIImageView, word:String, name:String){
         // to set the right battle images
         switch word {
-        case "HOLD ON! OAK used POTION":
+        case "HOLD ON! NESSA used POTION":
             break
         case "BOTH used ROCK SMASH!":
             pMoveImage.image = UIImage(named: "rock")
@@ -67,7 +58,7 @@ class View: UIView {
             pImage.isHidden = true
             oImage.isHidden = true
             break
-        case "OAK used X-SCISSOR! It's not very effective...":
+        case "NESSA used KITCHEN SCISSORS! It's not very effective...":
             
             oMoveImage.image = UIImage(named: "scissors-1")
             oImage.isHidden = true
@@ -90,12 +81,12 @@ class View: UIView {
             pMoveImage.image = UIImage(named: "paper")
             pImage.isHidden = true
             break
-        case "OAK used ROCK SMASH! It's not very effective...":
+        case "NESSA used ROCK SMASH! It's not very effective...":
             
             oMoveImage.image = UIImage(named: "rock")
             oImage.isHidden = true
             break
-        case "BOTH used X-SCISSOR!":
+        case "BOTH used KITCHEN SCISSORS!":
             
             pMoveImage.image = UIImage(named: "scissors-1")
             oMoveImage.image = UIImage(named: "scissors-1")
@@ -103,12 +94,12 @@ class View: UIView {
             pImage.isHidden = true
             oImage.isHidden = true
             break
-        case "OAK used PAPER CUT! It's not very effective...":
+        case "NESSA used PAPER CUT! It's not very effective...":
             
             oMoveImage.image = UIImage(named: "paper")
             oImage.isHidden = true
             break
-        case "\(name) used X-SCISSOR! It's not very effective...":
+        case "\(name) used KITCHEN SCISSORS! It's not very effective...":
             
             pMoveImage.image = UIImage(named: "scissors-1")
             pImage.isHidden = true
@@ -122,17 +113,17 @@ class View: UIView {
         // to set the right battle images
         switch word {
             
-        case "OAK used X-SCISSOR! It's super effective!":
+        case "NESSA used KITCHEN SCISSORS! It's super effective!":
             oImage.isHidden = true
             oMoveImage.image = UIImage(named: "scissors-1")
             
             break
-        case "OAK used ROCK SMASH! It's super effective!":
+        case "NESSA used ROCK SMASH! It's super effective!":
             oImage.isHidden = true
             oMoveImage.image = UIImage(named: "rock")
             
             break
-        case "OAK used PAPER CUT! It's super effective!":
+        case "NESSA used PAPER CUT! It's super effective!":
             oImage.isHidden = true
             oMoveImage.image = UIImage(named: "paper")
             
@@ -147,7 +138,7 @@ class View: UIView {
             pMoveImage.image = UIImage(named: "paper")
             
             break
-        case "\(name) used X-SCISSOR! It's super effective!":
+        case "\(name) used KITCHEN SCISSORS! It's super effective!":
             pImage.isHidden = true
             pMoveImage.image = UIImage(named: "scissors-1")
             
@@ -158,7 +149,7 @@ class View: UIView {
     }
     
     func checkWhoLost(string:String, hp1:UIProgressView, hp2:UIProgressView, who1: Player, who2: Player){
-        if string.contains("OAK"){
+        if string.contains("NESSA"){
             hpBar(hp: hp2, who: who2)
             
         } else if string.contains("\(who1.name)"){
@@ -181,13 +172,13 @@ class View: UIView {
         case 1:
             longBarText.isEnabled = true
             name.score = 0
-            longBarLbl.text? = "OAK WINS! \(name.name) WAS KNOCKED OUT!"
+            longBarLbl.text? = "NESSA WINS! \(name.name) WAS KNOCKED OUT!"
             num = 1
             break
         case 2:
             longBarText.isEnabled = true
             name.score = 0
-            longBarLbl.text? = "\(name.name) WINS! PROFESSOR OAK was DEFEATED!"
+            longBarLbl.text? = "\(name.name) WINS! GRUMPY NESSA was DEFEATED!"
             num = 2
             break
         case 3:
@@ -232,7 +223,7 @@ class View: UIView {
         score.text = "\(who.score)"
         original.text = "\(who.score)"
         
-        longBar.text = "PROFESSOR OAK wants to fight!"
+        longBar.text = "GRUMPY NESSA wants to fight!"
     }
     func setupScreen(pMoveImage:UIImageView, oMoveImage:UIImageView, myHP:UIProgressView, oHP:UIProgressView, player:Player, oak:Player){
         pMoveImage.image = nil

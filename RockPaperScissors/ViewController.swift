@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var menuBar: UIImageView!
     @IBOutlet weak var fightBtn: UIButton!
     @IBOutlet weak var itemBtn: UIButton!
-    @IBOutlet weak var pkmnBtn: UIButton!
     @IBOutlet weak var runItem: UIButton!
     @IBOutlet weak var arrowBtn: UIImageView!
     
@@ -64,17 +63,14 @@ class ViewController: UIViewController {
     
     var player:Player!
     var oak:Player!
-    var sound = Sound()
     var viewT = View()
     var battle:Battle!
     
     @IBAction func runBtnTouch(_ sender: Any) {
-        
-        sound.runaway.play()
-        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
+
+        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         let text = "Got away safely!"
         viewT.fightBtnTouch(longBarText: longBarText, longBarLbl: longBarLbl, string: text, enable: true)
-        sound.song.stop()
         
     }
     
@@ -96,12 +92,11 @@ class ViewController: UIViewController {
         
         viewT.itemListToggle(itemList: itemList, cancel: itemCancelBtn, potion: PotionBtn, lbl: PotionCount, toggle: false)
         
-        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
+        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         
         firstMessageBtn.isEnabled = true
         if battle.playerPotionUsage() == -1 {
             viewT.itemListToggle(itemList: itemList, cancel: itemCancelBtn, potion: PotionBtn, lbl: PotionCount, toggle: true)
-            sound.potion.play()
             viewT.potion(hp: myHPprogress, who: player)
             myScoreLbl.text = "\(player.score)"
 
@@ -114,9 +109,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func fightBtnTouch(_ sender: Any) {
-        sound.play_click()
         
-        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
+        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         viewT.fightBtnTouch(longBarText: longBarText, longBarLbl: longBarLbl, string: "", enable: false)
         
         viewT.fightBar(fightBar: fightBar, fightBtn: fightBtn, arrow2Btn: arrow2btn, fightStack: fightStack, hidden: false)
@@ -134,10 +128,9 @@ class ViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         } else if choice == 3 {
             //menuBarVisible(hidden: false)
-            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:false)
+            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:false)
 
         }
-        sound.play_click()
         
     }
     
@@ -146,20 +139,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var unmuteButton: UIButton!
     
     @IBAction func toggleMute(_ sender: Any) {
-        sound.toggle_mute()
         muteButton.isHidden = true
         unmuteButton.isHidden = false
         
     }
     @IBAction func toggleUnmute(_ sender: Any) {
-        sound.toggle_unmute()
         muteButton.isHidden = false
         unmuteButton.isHidden = true
         
     }
 
     @IBAction func afterFirstMessage(_ sender: Any) {
-        sound.play_click()
         
         let next_msg = battle.afterFirstMessage()
         viewT.setBattleImage2(pMoveImage: myMoveImage, oMoveImage: oppMoveImage, pImage: myImage, oImage: oakImage, word: next_msg, name: player.name)
@@ -173,7 +163,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func afterSecondMessage(_ sender: Any) {
-        sound.play_click()
         
         let string = battle.afterSecondMessage()
         viewT.checkWhoLost(string: string, hp1: myHPprogress, hp2: myOppProgress, who1: player, who2: oak)
@@ -182,23 +171,17 @@ class ViewController: UIViewController {
         // resets the battle scene i.e oak and ash visible
         viewT.reset(longBarLbl: longBarLbl, btn: secondMessageBtn, pMoveImage: myMoveImage, oMoveImage: oppMoveImage, pImage: myImage, oImage: oakImage)
         
-        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:false)
+        viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:false)
 
         let number = battle.endGame()
         let check = viewT.endGame(check: number, name: player, longBarText: longBarText, longBarLbl: longBarLbl)
         
         if check == 1 {
-            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
-            sound.song.stop()
-            sound.loss.play()
+            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         } else if check == 2{
-            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
-            sound.song.stop()
-            sound.victory.play()
+            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         } else if check == 3{
-            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, pkmnBtn:pkmnBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
-            sound.song.stop()
-            sound.victory.play()
+            viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         }
         
         
@@ -206,14 +189,12 @@ class ViewController: UIViewController {
     
     // FIGHT BUTTON TOUCHED
     @IBAction func myMoveMethod(sender:UIButton){
-        sound.play_click()
         
         let myMoveNumber = sender.tag
         
         // gets the battle sentence & correct images
         let outcome = battle.player_move(number: myMoveNumber)
-        if battle.message1.contains("HOLD ON! OAK used POTION") {
-            sound.potion.play()
+        if battle.message1.contains("HOLD ON! NESSA used POTION") {
             myOppProgress.setProgress(Float(oak.progress), animated: true)
             
             oak_itemCount.isHidden = false
@@ -233,7 +214,7 @@ class ViewController: UIViewController {
         
         let set_player = Player(name:passed_name, start:passed_playerHP, hp:passed_playerHP, score:Int(passed_playerHP), items:passed_playerItems)
         player = set_player
-        let set_oak = Player(name:"Oak", start:passed_oakHP, hp:passed_oakHP, score:Int(passed_oakHP), items:passed_oakItems)
+        let set_oak = Player(name:"NESSA", start:passed_oakHP, hp:passed_oakHP, score:Int(passed_oakHP), items:passed_oakItems)
         oak = set_oak
         
         battle = Battle(player: player, opponent: oak)
@@ -241,29 +222,6 @@ class ViewController: UIViewController {
         viewT.setUpLabels(name: playerName, score: myScoreLbl, original: originalScoreLbl, who: player, longBar: longBarLbl)
         viewT.setupScreen(pMoveImage: myMoveImage, oMoveImage: oppMoveImage, myHP: myHPprogress, oHP: myOppProgress, player: player, oak: oak)
         
-//        playerName.text? = player.name
-//        
-//        myScoreLbl.text = "\(player.score)"
-//        originalScoreLbl.text = "\(player.score)"
-//        
-//        // no image
-//        myMoveImage.image = nil
-//        oppMoveImage.image = nil
-        
-//        self.myHPprogress.transform = myHPprogress.transform.scaledBy(x: 1, y: 4)
-//        self.myHPprogress.setProgress(Float(player.playerHP), animated: true)
-//        
-//        self.myOppProgress.transform = myOppProgress.transform.scaledBy(x: 1, y: 4)
-//        self.myOppProgress.setProgress(Float(oak.playerHP), animated: true)
-//        
-        
-        //longBarLbl.text = "PROFESSOR OAK wants to fight!"
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        sound.sound_setup()
-        sound.song.play()
     }
 
 }

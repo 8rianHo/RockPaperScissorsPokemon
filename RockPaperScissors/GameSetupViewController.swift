@@ -20,20 +20,13 @@ class GameSetupViewController: UIViewController {
     var chosen_oakHP:Int = 5
     var player_test = Player()
     var oak_test = Player()
-    
-    var sound = Sound()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sound.sound_setup()
         HPlabel_player.text? = chosen_playerHP.description
         HPlabel_oak.text? = chosen_oakHP.description
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        sound.play_menu()
     }
     
     @IBAction func increment_playerHP(_ sender: Any) {
@@ -74,13 +67,11 @@ class GameSetupViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let valid_name = player_name.text
         let oak_test = player_name.text?.uppercased()
-        if (valid_name?.isEmpty)! || (valid_name?.contains(" "))! || (oak_test?.contains("OAK"))! || ((valid_name?.characters.count)! > 6) {
+        if (valid_name?.isEmpty)! || (valid_name?.contains(" "))! || (oak_test?.contains("NESSA"))! || ((valid_name?.characters.count)! > 6) {
             player_name.text = ""
             player_name.placeholder = "valid name please"
             return false
         }
-        sound.play_click()
-        sound.menu.stop()
         return true
     }
     

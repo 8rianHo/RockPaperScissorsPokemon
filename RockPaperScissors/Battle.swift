@@ -96,7 +96,7 @@ class Battle {
         
         if opp == -1 {
             
-            message1 = "HOLD ON! OAK used POTION"
+            message1 = "HOLD ON! NESSA used POTION"
             
         } else {
             
@@ -106,7 +106,7 @@ class Battle {
                 
             } else if player == Weapon.Rock.rawValue && opp == Weapon.Scissors.rawValue {
                 
-                message1 = "OAK used X-SCISSOR! It's not very effective..."
+                message1 = "NESSA used KTCHEN SCISSORS! It's not very effective..."
 
             } else if player == Weapon.Rock.rawValue && opp == Weapon.Paper.rawValue {
                 
@@ -122,20 +122,20 @@ class Battle {
                 
             } else if player == Weapon.Paper.rawValue && opp == Weapon.Rock.rawValue {
                 
-                message1 = "OAK used ROCK SMASH! It's not very effective..."
+                message1 = "NESSA used ROCK SMASH! It's not very effective..."
                 
                 
             } else if player == Weapon.Scissors.rawValue && opp == Weapon.Scissors.rawValue {
                 
-                message1 = "BOTH used X-SCISSOR!"
+                message1 = "BOTH used KITCHEN SCISSORS!"
                 
             } else if player == Weapon.Scissors.rawValue && opp == Weapon.Paper.rawValue {
                 
-                message1 = "OAK used PAPER CUT! It's not very effective..."
+                message1 = "NESSA used PAPER CUT! It's not very effective..."
                 
             } else if player == Weapon.Scissors.rawValue && opp == Weapon.Rock.rawValue {
                 
-                message1 = "\(player1.name) used X-SCISSOR! It's not very effective..."
+                message1 = "\(player1.name) used KITCHEN SCISSORS! It's not very effective..."
                 
             }
         }
@@ -198,28 +198,28 @@ class Battle {
             }
             
             switch message1 {
-            case "OAK used X-SCISSOR! It's not very effective...":
+            case "NESSA used KITCHEN SCISSORS! It's not very effective...":
                 message2 = "\(player1.name) used ROCK SMASH! It's super effective!"
                 
                 break
-            case "OAK used ROCK SMASH! It's not very effective...":
+            case "NESSA used ROCK SMASH! It's not very effective...":
                 message2 = "\(player1.name) used PAPER CUT! It's super effective!"
 
                 break
-            case "OAK used PAPER CUT! It's not very effective...":
-                message2 = "\(player1.name) used X-SCISSOR! It's super effective!"
+            case "NESSA used PAPER CUT! It's not very effective...":
+                message2 = "\(player1.name) used KITCHEN SCISSORS! It's super effective!"
 
                 break
             case "\(player1.name) used ROCK SMASH! It's not very effective...":
-                message2 = "OAK used PAPER CUT! It's super effective!"
+                message2 = "NESSA used PAPER CUT! It's super effective!"
 
                 break
             case "\(player1.name) used PAPER CUT! It's not very effective...":
-                message2 = "OAK used X-SCISSOR! It's super effective!"
+                message2 = "NESSA used KITCHEN SCISSORS! It's super effective!"
 
                 break
-            case "\(player1.name) used X-SCISSOR! It's not very effective...":
-                message2 = "OAK used ROCK SMASH! It's super effective!"
+            case "\(player1.name) used KITCHEN SCISSORS! It's not very effective...":
+                message2 = "NESSA used ROCK SMASH! It's super effective!"
                 break
                 
             default:
@@ -233,8 +233,8 @@ class Battle {
     func afterSecondMessage() -> String{
         var who = ""
         if message2.contains("\(player1.name)"){
-            who = "OAK"
-        } else if message2.contains("OAK"){
+            who = "NESSA"
+        } else if message2.contains("NESSA"){
             player1.score -= 1
             who = "\(player1.name)"
         } else if message2.contains("confusion"){

@@ -15,8 +15,8 @@
 		D366058C1E4A02EC004BC099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366058B1E4A02EC004BC099 /* AppDelegate.swift */; };
 		D366058E1E4A02EC004BC099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366058D1E4A02EC004BC099 /* ViewController.swift */; };
 		D36605911E4A02EC004BC099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D366058F1E4A02EC004BC099 /* Main.storyboard */; };
-		D36605931E4A02EC004BC099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36605921E4A02EC004BC099 /* Assets.xcassets */; };
 		D36605961E4A02EC004BC099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36605941E4A02EC004BC099 /* LaunchScreen.storyboard */; };
+		D3BD5CBD1F740C9A000FE8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BD5CBC1F740C9A000FE8B1 /* Assets.xcassets */; };
 		D3C173171EC3156F00FB42C1 /* GameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C173161EC3156F00FB42C1 /* GameSetupViewController.swift */; };
 		D3C4E7771EEEB38200F5B9EE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4E7761EEEB38200F5B9EE /* Item.swift */; };
 		D3C4E77A1EEF32A300F5B9EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4E7791EEF32A300F5B9EE /* Player.swift */; };
@@ -39,9 +39,9 @@
 		D366058B1E4A02EC004BC099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D366058D1E4A02EC004BC099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D36605901E4A02EC004BC099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D36605921E4A02EC004BC099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D36605951E4A02EC004BC099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D36605971E4A02EC004BC099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3BD5CBC1F740C9A000FE8B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C173161EC3156F00FB42C1 /* GameSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSetupViewController.swift; sourceTree = "<group>"; };
 		D3C4E7761EEEB38200F5B9EE /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
 		D3C4E7791EEF32A300F5B9EE /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				D3C4E7961EF48B2400F5B9EE /* Controller */,
 				D366058B1E4A02EC004BC099 /* AppDelegate.swift */,
 				D366058F1E4A02EC004BC099 /* Main.storyboard */,
-				D36605921E4A02EC004BC099 /* Assets.xcassets */,
+				D3BD5CBC1F740C9A000FE8B1 /* Assets.xcassets */,
 				D36605941E4A02EC004BC099 /* LaunchScreen.storyboard */,
 				D36605971E4A02EC004BC099 /* Info.plist */,
 			);
@@ -203,6 +203,7 @@
 			files = (
 				D36512FF1E4A5EF70028465E /* Pokemon GB.ttf in Resources */,
 				D3C4E7871EF155AC00F5B9EE /* loss.mp3 in Resources */,
+				D3BD5CBD1F740C9A000FE8B1 /* Assets.xcassets in Resources */,
 				D3C4E7821EF01AC400F5B9EE /* runaway.m4a in Resources */,
 				D3C4E7881EF155AC00F5B9EE /* menu.mp3 in Resources */,
 				D3C4E7801EF019B500F5B9EE /* potion.m4a in Resources */,
@@ -210,7 +211,6 @@
 				D35C6A8E1E4F6AF100BB4228 /* victory.mp3 in Resources */,
 				D35C6A881E4F478600BB4228 /* click.wav in Resources */,
 				D3C4E7841EF01E0100F5B9EE /* battlesound.m4a in Resources */,
-				D36605931E4A02EC004BC099 /* Assets.xcassets in Resources */,
 				D36605911E4A02EC004BC099 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
