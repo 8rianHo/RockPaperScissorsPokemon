@@ -64,14 +64,23 @@ class GameSetupViewController: UIViewController {
         }
     }
     
+    @IBAction func infoBtnDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: "infoSegue", sender: nil)
+    }
+    
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let valid_name = player_name.text
-        let oak_test = player_name.text?.uppercased()
-        if (valid_name?.isEmpty)! || (valid_name?.contains(" "))! || (oak_test?.contains("NESSA"))! || ((valid_name?.characters.count)! > 6) {
-            player_name.text = ""
-            player_name.placeholder = "valid name please"
-            return false
+        
+        if identifier == "startSegue" {
+            let valid_name = player_name.text
+            let oak_test = player_name.text?.uppercased()
+            if (valid_name?.isEmpty)! || (valid_name?.contains(" "))! || (oak_test?.contains("NESSA"))! || ((valid_name?.characters.count)! > 6) {
+                player_name.text = ""
+                player_name.placeholder = "valid name please"
+                return false
+            }
         }
+        
         return true
     }
     
@@ -88,6 +97,7 @@ class GameSetupViewController: UIViewController {
             destinationVC.passed_oakHP = Double(oakHP)
             destinationVC.passed_playerItems = player_test.start_items()
             destinationVC.passed_oakItems = oak_test.start_items()
+            
         }
         
     }

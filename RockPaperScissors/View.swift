@@ -49,7 +49,7 @@ class View: UIView {
     func setBattleImage1(pMoveImage:UIImageView, oMoveImage:UIImageView, pImage:UIImageView, oImage:UIImageView, word:String, name:String){
         // to set the right battle images
         switch word {
-        case "HOLD ON! NESSA used POTION":
+        case "HOLD ON! NESSA ate FRUIT":
             break
         case "BOTH used ROCK SMASH!":
             pMoveImage.image = UIImage(named: "rock")
@@ -153,6 +153,7 @@ class View: UIView {
             hpBar(hp: hp2, who: who2)
             
         } else if string.contains("\(who1.name)"){
+            
             hpBar(hp: hp1, who: who1)
         } else if string.contains("confusion"){
             hpBar(hp: hp2, who: who2)

@@ -66,6 +66,9 @@ class ViewController: UIViewController {
     var viewT = View()
     var battle:Battle!
     
+    @IBOutlet weak var high_score_label: UILabel!
+    var defaults: UserDefaults = UserDefaults.standard
+    
     @IBAction func runBtnTouch(_ sender: Any) {
 
         viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
@@ -153,7 +156,7 @@ class ViewController: UIViewController {
         
         let next_msg = battle.afterFirstMessage()
         viewT.setBattleImage2(pMoveImage: myMoveImage, oMoveImage: oppMoveImage, pImage: myImage, oImage: oakImage, word: next_msg, name: player.name)
-        if battle.message1.contains("POTION"){
+        if battle.message1.contains("FRUIT"){
             oak_itemCount.isHidden = true
         }
         firstMessageBtn.isEnabled = false
@@ -177,8 +180,15 @@ class ViewController: UIViewController {
         let check = viewT.endGame(check: number, name: player, longBarText: longBarText, longBarLbl: longBarLbl)
         
         if check == 1 {
+            defaults.set(0, forKey: "score")
+            high_score_label.text = defaults.integer(forKey: "score").description
+            
             viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         } else if check == 2{
+            let score = defaults.integer(forKey: "score") + 1
+            defaults.set(score, forKey: "score")
+            high_score_label.text = defaults.integer(forKey: "score").description
+            
             viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
         } else if check == 3{
             viewT.menuBarSet(menuBar:menuBar, fightBtn:fightBtn, itemBtn:itemBtn, runBtn:runItem, arrow2Btn:arrowBtn, hidden:true)
@@ -194,11 +204,11 @@ class ViewController: UIViewController {
         
         // gets the battle sentence & correct images
         let outcome = battle.player_move(number: myMoveNumber)
-        if battle.message1.contains("HOLD ON! NESSA used POTION") {
+        if battle.message1.contains("HOLD ON! NESSA ate FRUIT") {
             myOppProgress.setProgress(Float(oak.progress), animated: true)
             
             oak_itemCount.isHidden = false
-            oak_itemCount.text = ("POTION x\(oak.item_bag)")
+            oak_itemCount.text = ("FRUIT x\(oak.item_bag)")
         }
         viewT.setBattleImage1(pMoveImage: myMoveImage, oMoveImage: oppMoveImage, pImage: myImage, oImage: oakImage, word: outcome, name: player.name)
         
@@ -211,6 +221,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        high_score_label.text = defaults.integer(forKey: "score").description
         
         let set_player = Player(name:passed_name, start:passed_playerHP, hp:passed_playerHP, score:Int(passed_playerHP), items:passed_playerItems)
         player = set_player

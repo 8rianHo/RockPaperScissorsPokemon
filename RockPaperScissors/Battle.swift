@@ -96,7 +96,7 @@ class Battle {
         
         if opp == -1 {
             
-            message1 = "HOLD ON! NESSA used POTION"
+            message1 = "HOLD ON! NESSA ate FRUIT"
             
         } else {
             
@@ -106,7 +106,7 @@ class Battle {
                 
             } else if player == Weapon.Rock.rawValue && opp == Weapon.Scissors.rawValue {
                 
-                message1 = "NESSA used KTCHEN SCISSORS! It's not very effective..."
+                message1 = "NESSA used KITCHEN SCISSORS! It's not very effective..."
 
             } else if player == Weapon.Rock.rawValue && opp == Weapon.Paper.rawValue {
                 
@@ -146,13 +146,16 @@ class Battle {
         
         var check = -2
         if oak.item_bag != 0 {
+            
             let health = (1.1/oak.startHP) * 3
             oak.progress = oak.progress + health
+            if oak.progress > 1.0 {
+                oak.progress = 1.0
+            }
             oak.item_bag -= 1
             check = -1
             
         }
-        
         return check
     }
     // remember to check first message for item count
@@ -163,15 +166,15 @@ class Battle {
             // if progress is reasonable
             if player1.progress != 1.0 {
                 let health = (1.1/player1.startHP) * 3
-                let test = player1.progress + health
-                if test > 1 {
+                let progress = player1.progress + health
+                if progress > 1 {
                     player1.progress = 1
                     player1.score = Int(player1.startHP)
                 } else {
                     player1.progress = player1.progress + health
                     player1.score = player1.score + 3
                 }
-                message1 = "TIMEOUT! \(player1.name) used POTION"
+                message1 = "TIMEOUT! \(player1.name) ate FRUIT"
                 check = -1
             }
         }
@@ -190,7 +193,7 @@ class Battle {
                 } else {
                     message2 = "The moves had no effect!"
                 }
-            } else if message1.contains("POTION"){
+            } else if message1.contains("FRUIT"){
                 message2 = "Round skipped!"
 
             } else if message1.contains("game?"){
